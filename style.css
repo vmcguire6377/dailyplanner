@@ -1,0 +1,71 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1;
+  }
+  
+  textarea{
+    background: transparent;
+    border: none;
+    resize: none;
+    color: #000000;
+    padding: 20px;
+    width: 70%;
+    vertical-align: text-top;
+  }
+  
+  .jumbotron {
+    text-align: center;
+    background-color: transparent;
+    color: black;
+    border-radius: 0;
+    border-bottom: 10px solid black;
+  }
+  
+  .time-block{
+    text-align: center;
+    border-radius: 15px;
+  }
+  
+  .form-group {
+    height: 80px;
+    border-top: 10px solid white;
+    margin-left: 25px;
+    border-bottom: dashed;
+  }
+  
+  .hour {
+    background-color: #000000;
+    color: #000000;
+    border-top: 1px dashed #000000;
+    vertical-align: top;
+  }
+  
+  .past {
+    background-color: #a3a0a0;
+    color: white;
+  }
+  
+  .present {
+    background-color: #ff6961;
+    color: white;
+  }
+  
+  .future {
+    background-color: #77dd77;
+    color: white;
+  }
+  
+  .saveBtn {
+    border-left: 1px solid black;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #06AED5;
+    color: white;
+  }
+  
+  .saveBtn i:hover {
+    font-size: 20px;
+    transition: all .3s ease-in-out;
+  }
+  
