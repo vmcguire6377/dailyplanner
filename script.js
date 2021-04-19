@@ -1,24 +1,42 @@
 //event is stored in local storage so that upon browser reload it persists
 var eventDescription = {};
-var btn = document.getElementById("save")
-btn.addEventListener("click", saveEventDescription);
-document.getElementById("eventDescription").innerHTML = localStorage.getItem("eventDescription");
+var btnSave = document.querySelector(".btnSave");
+btnSave.addEventListener("click", saveEventDescription);
+document.getElementById("9").innerHTML = localStorage.getItem("9");
 
+function displayNotes (){
+  document.getElementById("9").innerHTML = localStorage.getItem("9");
+  document.getElementById("10").innerHTML = localStorage.getItem("10");
+  document.getElementById("11").innerHTML = localStorage.getItem("11");
+  document.getElementById("12").innerHTML = localStorage.getItem("12");
+  document.getElementById("1").innerHTML = localStorage.getItem("1");
+  document.getElementById("2").innerHTML = localStorage.getItem("2");
+  document.getElementById("3").innerHTML = localStorage.getItem("3");
+  document.getElementById("4").innerHTML = localStorage.getItem("4");
+  document.getElementById("5").innerHTML = localStorage.getItem("5");
 
+}
 //enter the save event function
 function saveEventDescription (event) {
+  console.log("saveEventDescription");
   event.preventDefault();
-  var input = document.getElementById("eventDescription");
-  console.log(input.value);
-  localStorage.setItem("eventDescription", input.value);
+  var input = document.querySelector(".schedInput").val();
+  console.log(input);
+  //var time = document.querySelector("#9").value;
+  //console.log(time);
 
-  $(document).ready(function() {
-    $("#save").click(function() {
-      var ptext = $("#eventDescription").text();
-    })
-  })
-}
 
+  localStorage.setItem("9", input);
+  localStorage.setItem("10", input);
+
+  //$(document).ready(function() {
+   // $("#save").click(function() {
+    //  var ptext = $("#eventDescription").text();
+  
+  }
+
+
+displayNotes();
 //use jquery to get the text content of any eventDescription timeblock
 
 
