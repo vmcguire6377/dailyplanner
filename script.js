@@ -1,5 +1,65 @@
-//event is stored in local storage so that upon browser reload it persists
+
 var eventDescription = {};
+var btn = document.querySelector("saveBtn");
+saveBtn.addEventListener("click", saveEventDescription());
+var savedInfo = [];
+var results = localStorage.getItem("schedData");
+
+var schedInput = document.getElementById("9am");
+var schedInput = document.getElementById("10am");
+var schedInput = document.getElementById("11am");
+var schedInput = document.getElementById("12pm");
+var schedInput = document.getElementById("1pm");
+var schedInput = document.getElementById("2pm");
+var schedInput = document.getElementById("3pm");
+var schedInput = document.getElementById("4pm");
+var schedInput = document.getElementById("5pm");
+
+//this is not working***
+function displayItems () {
+  results = localStorage.getItem("schedData");
+  document.getElementById("schedInput").innerHTML = schedInput;
+  console.log(displayItems);
+  return(results);
+}
+
+
+//enter the save event function
+function saveEventDescription (event) {
+  event.preventDefault();
+
+  var allInputs = document.querySelectorAll(".schedInput")
+  console.log(allInputs);
+
+ 
+
+  for(var i = 0; i < allInputs.length; i++) {
+    var endPoint = {}
+    endPoint.name = allInputs[i].id
+    endPoint.value= allInputs[i].value
+    savedInfo.push(endPoint);
+    
+  }
+
+//event is stored in local storage so that upon browser reload it persists
+ localStorage.getItem("savedInfo");
+ localStorage.setItem("schedData", JSON.stringify(savedInfo));
+ localStorage.setItem("9am", input);
+  localStorage.setItem("10am", input);
+  localStorage.setItem("11am", input);
+  localStorage.setItem("12pm", input);
+  localStorage.setItem("1pm", input);
+  localStorage.setItem("2pm", input);
+  localStorage.setItem("3pm", input);
+  localStorage.setItem("4pm", input);
+  localStorage.setItem("5pm", input);
+
+
+ 
+}
+
+//event is stored in local storage so that upon browser reload it persists
+/*var eventDescription = {};
 var btnSave = document.querySelector(".btnSave");
 btnSave.addEventListener("click", saveEventDescription);
 document.getElementById("9").innerHTML = localStorage.getItem("9");
@@ -20,7 +80,19 @@ function displayNotes (){
 function saveEventDescription (event) {
   console.log("saveEventDescription");
   event.preventDefault();
-  var input = document.querySelector(".schedInput").val();
+  var allInputs = document.querySelectorAll(".schedInput")
+  console.log(allInputs);
+
+  for(var i = 0; i < allInputs.length; i++) {
+    var endPoint = {}
+    endPoint.name = allInputs[i].id
+    endPoint.value= allInputs[i].value
+    savedInfo.push(endPoint);
+    
+  }
+
+  var input = document.querySelectorAll
+  (".schedInput").val();
   console.log(input);
   //var time = document.querySelector("#9").value;
   //console.log(time);
@@ -28,10 +100,21 @@ function saveEventDescription (event) {
 
   localStorage.setItem("9", input);
   localStorage.setItem("10", input);
+  localStorage.setItem("11", input);
+  localStorage.setItem("12", input);
+  localStorage.setItem("1", input);
+  localStorage.setItem("2", input);
+  localStorage.setItem("3", input);
+  localStorage.setItem("4", input);
+  localStorage.setItem("5", input);
 
   //$(document).ready(function() {
    // $("#save").click(function() {
     //  var ptext = $("#eventDescription").text();
+    //event is stored in local storage so that upon browser reload it persists
+ localStorage.getItem("savedInfo");
+ localStorage.setItem("schedData"), JSON.stringify(savedInfo);
+
   
   }
 
@@ -50,7 +133,7 @@ clock.textContent=timeDisplay;
 }
 setInterval(updateTime, 1000); 
 updateTime();
-
+saveEventDescription();
 
 
 
